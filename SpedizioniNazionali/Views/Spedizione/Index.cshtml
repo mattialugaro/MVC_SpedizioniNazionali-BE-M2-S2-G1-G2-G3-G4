@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SpedizioniNazionali.Models.Spedizione>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Spedizioni</h2>
+
+<p class="btn btn-dark">
+    <a href="~/Spedizione/Create" class="text-decoration-none text-white mt-3">Aggiungi Spedizione</a>
+</p>
+
+<table class="table text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CittaDestinataria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoConsegna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeDestinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataConsegnaPrevista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDSpedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataSpedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CittaDestinataria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoConsegna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeDestinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoSpedizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataConsegnaPrevista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
