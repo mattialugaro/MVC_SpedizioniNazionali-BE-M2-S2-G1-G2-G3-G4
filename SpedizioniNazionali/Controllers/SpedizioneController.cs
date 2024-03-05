@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace SpedizioniNazionali.Controllers
 {
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class SpedizioneController : Controller
     {
         // GET: Spedizione
@@ -70,7 +71,7 @@ namespace SpedizioniNazionali.Controllers
             try
             {
                 conn.Open();
-                string query = "INSET INTO Spedizione(DataSpedizione, Peso, CittaDestinataria, IndirizzoConsegna, NomeDestinatario, CostoSpedizione, DataConsegnaPrevista, IDCliente) VALUES(@DataSpedizione, @Peso, @CittaDestinataria, @IndirizzoConsegna, @NomeDestinatario, @CostoSpedizione, @DataConsegnaPrevista, @IDCliente)";
+                string query = "INSERT INTO Spedizione(DataSpedizione, Peso, CittaDestinataria, IndirizzoConsegna, NomeDestinatario, CostoSpedizione, DataConsegnaPrevista, IDCliente) VALUES(@DataSpedizione, @Peso, @CittaDestinataria, @IndirizzoConsegna, @NomeDestinatario, @CostoSpedizione, @DataConsegnaPrevista, @IDCliente)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 

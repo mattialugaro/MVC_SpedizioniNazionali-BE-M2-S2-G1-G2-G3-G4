@@ -9,6 +9,7 @@ namespace SpedizioniNazionali.Models
 {
     public class Spedizione
     {
+        [ScaffoldColumn(false)]
         public int IDSpedizione { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}")]
@@ -42,8 +43,8 @@ namespace SpedizioniNazionali.Models
         public decimal CostoSpedizione { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}")]
-        [DisplayName("Data di Conmsegna Prevista (AAAA-MM-GG)")]
-        [Required(ErrorMessage = "La Data di Conmsegna Prevista è un campo obbligatorio")]
+        [DisplayName("Data di Consegna Prevista (AAAA-MM-GG)")]
+        [Required(ErrorMessage = "La Data di Consegna Prevista è un campo obbligatorio")]
         public DateTime DataConsegnaPrevista { get; set; }
 
         [DisplayName("L' ID del Cliente")]

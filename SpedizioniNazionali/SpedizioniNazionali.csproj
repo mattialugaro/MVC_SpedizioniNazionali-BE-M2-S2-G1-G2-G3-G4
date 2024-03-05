@@ -120,15 +120,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="checkRuoloUtente.cs" />
+    <Compile Include="checkStatoSpedizione.cs" />
     <Compile Include="checkTipoCliente.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpedizioneController.cs" />
+    <Compile Include="Controllers\UtenteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AggiornamentoSpedizione.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Models\Spedizione.cs" />
+    <Compile Include="Models\Utente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +191,9 @@
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Spedizione\Index.cshtml" />
     <Content Include="Views\Spedizione\Create.cshtml" />
+    <Content Include="Views\Utente\Registrazione.cshtml" />
+    <Content Include="Views\Utente\Index.cshtml" />
+    <Content Include="Views\Utente\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

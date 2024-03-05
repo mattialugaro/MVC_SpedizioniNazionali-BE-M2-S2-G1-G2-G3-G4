@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace SpedizioniNazionali.Models
 {
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class ClienteController : Controller
     {
         // GET: Cliente
@@ -32,6 +33,7 @@ namespace SpedizioniNazionali.Models
                     c.Nome = reader["Nome"].ToString();
                     c.Cognome = reader["Cognome"].ToString();
                     c.Email = reader["Email"].ToString();
+                    c.TipoCliente = reader["TipoCliente"].ToString();
                     c.CodiceFiscale = reader["CodiceFiscale"].ToString();
                     c.PIva = reader["PIva"].ToString();
                     listaClienti.Add(c);
@@ -66,13 +68,14 @@ namespace SpedizioniNazionali.Models
             try
             {
                 conn.Open();
-                string query = "INSET INTO Cliente(Nome, Cognome, Email, CodiceFiscale, PIva) VALUES(@Nome, @Cognome, @Email, @CodiceFiscale, @PIva)";
+                string query = "INSERT INTO Cliente(Nome, Cognome, Email, CodiceFiscale, PIva) VALUES(@Nome, @Cognome, @Email, @CodiceFiscale, @PIva)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@Nome", c.Nome);
                 cmd.Parameters.AddWithValue("@Cognome", c.Cognome);
                 cmd.Parameters.AddWithValue("@Email", c.Email);
+                cmd.Parameters.AddWithValue("@TipoCliente", c.TipoCliente);
                 cmd.Parameters.AddWithValue("@CodiceFiscale", c.CodiceFiscale);
                 cmd.Parameters.AddWithValue("@PIva", c.PIva);
                 cmd.ExecuteNonQuery();

@@ -9,6 +9,7 @@ namespace SpedizioniNazionali.Models
 {
     public class Cliente
     {
+        [ScaffoldColumn(false)]
         public int IDCliente { get; set; }
 
         [Required(ErrorMessage = "Il Nome è un campo obbligatorio")]
