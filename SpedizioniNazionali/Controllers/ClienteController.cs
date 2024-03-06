@@ -68,7 +68,7 @@ namespace SpedizioniNazionali.Models
             try
             {
                 conn.Open();
-                string query = "INSERT INTO Cliente(Nome, Cognome, Email, CodiceFiscale, PIva) VALUES(@Nome, @Cognome, @Email, @CodiceFiscale, @PIva)";
+                string query = "INSERT INTO Cliente(Nome, Cognome, Email, TipoCliente, PIva, CodiceFiscale) VALUES(@Nome, @Cognome, @Email, @TipoCliente, @PIva, @CodiceFiscale)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -76,8 +76,10 @@ namespace SpedizioniNazionali.Models
                 cmd.Parameters.AddWithValue("@Cognome", c.Cognome);
                 cmd.Parameters.AddWithValue("@Email", c.Email);
                 cmd.Parameters.AddWithValue("@TipoCliente", c.TipoCliente);
-                cmd.Parameters.AddWithValue("@CodiceFiscale", c.CodiceFiscale);
-                cmd.Parameters.AddWithValue("@PIva", c.PIva);
+
+                cmd.Parameters.AddWithValue("@PIva", c.TipoCliente == "Azienda" ? c.PIva : (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodiceFiscale", c.TipoCliente != "Azienda" ? c.CodiceFiscale : (object)DBNull.Value);
+
                 cmd.ExecuteNonQuery();
 
             }

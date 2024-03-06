@@ -97,5 +97,32 @@ namespace SpedizioniNazionali.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult ControllaSpedizione()
+        {
+            string connectionstring = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString.ToString();
+            SqlConnection conn = new SqlConnection(connectionstring);
+
+            try
+            {
+                conn.Open();
+                string query = "";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                //..........
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return View();
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace SpedizioniNazionali.Models
         public string Password { get; set; }
 
         [ScaffoldColumn(false)]
-        [checkRuoloUtente(Kind = "Utente,Admin,SuperAdmin", ErrorMessage = "Il ruolo dell'Utente può essere solo Utente, Admin o SuperAdmin.")]
+        //[checkRuoloUtente(Kind = "Utente,Admin,SuperAdmin", ErrorMessage = "Il ruolo dell'Utente può essere solo Utente, Admin o SuperAdmin.")]
         public string Ruolo {  get; set; }
 
     }

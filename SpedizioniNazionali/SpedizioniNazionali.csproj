@@ -132,6 +132,7 @@
     <Compile Include="Models\AggiornamentoSpedizione.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Models\RuoliUtenti.cs" />
     <Compile Include="Models\Spedizione.cs" />
     <Compile Include="Models\Utente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
