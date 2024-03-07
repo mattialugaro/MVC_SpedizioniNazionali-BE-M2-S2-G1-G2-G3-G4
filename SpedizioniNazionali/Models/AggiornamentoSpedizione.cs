@@ -15,7 +15,7 @@ namespace SpedizioniNazionali.Models
         [DisplayName("Stato della Spedizione")]
         [Required(ErrorMessage = "Lo Stato della Spedizione è un campo obbligatorio")]
         [StringLength(15, ErrorMessage = "Lo Stato della Spedizione non può avere più di 15 caratteri")]
-        [checkStatoSpedizione(Situation = "In Transito,In Consegna,Consegnato,Non Consegnato", ErrorMessage = "Lo Stato della Spedizione può essere solo In Transito, In Consegna, Consegnato o Non Consegnato.")]
+        //[checkStatoSpedizione(Situation = "In Transito,In Consegna,Consegnato,Non Consegnato", ErrorMessage = "Lo Stato della Spedizione può essere solo In Transito, In Consegna, Consegnato o Non Consegnato.")]
         public string StatoSpedizione { get; set; }
 
         [DisplayName("Luogo dove si trova il Pacco")]
@@ -28,12 +28,17 @@ namespace SpedizioniNazionali.Models
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}")]
         [DisplayName("Aggiornamento Data e Ora della Spedizione")]
+        [DataType(DataType.DateTime)]
         [Required(ErrorMessage = "L' Aggiornamento Data e Ora della Spedizione è un campo obbligatorio")]
         public DateTime DataOraAggiornamento { get; set; }
 
         [DisplayName("L' ID della Spedizione")]
         [Required(ErrorMessage = "L' ID della Spedizione è un campo obbligatorio")]
         public int IDSpedizione { get; set; }
+
+        [DisplayName("Codice Fiscale o Partita Iva")]
+        public string CodiceFiscale { get; set; }
+        public Spedizione Spedizione { get; set; }
 
     }
 }

@@ -36,10 +36,6 @@
         <th>
             @Html.DisplayNameFor(model => model.DataConsegnaPrevista)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IDCliente)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -69,12 +65,7 @@
             @Html.DisplayFor(modelItem => item.DataConsegnaPrevista)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IDCliente)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <a href="~/AggiornamentoSpedizione/Index" class="text-decoration-none">Aggiorna Spedizione</a>
         </td>
     </tr>
 }

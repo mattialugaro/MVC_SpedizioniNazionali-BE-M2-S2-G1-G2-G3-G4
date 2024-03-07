@@ -14,11 +14,13 @@ namespace SpedizioniNazionali.Models
 
         [DisplayFormat(DataFormatString = "{0:d}")]
         [DisplayName("Data della Spedizione (AAAA-MM-GG)")]
+        [DataType(DataType.DateTime)]
         [Required(ErrorMessage = "La Data della Spedizione è un campo obbligatorio")]
         public DateTime DataSpedizione { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:N2}")]
         [DisplayName("Peso della Spedizione")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Il Peso deve essere maggiore di zero.")]
         [Required(ErrorMessage = "Peso della Spedizione è un campo obbligatorio")]
         public decimal Peso { get; set; }
 
@@ -39,11 +41,13 @@ namespace SpedizioniNazionali.Models
 
         [Required(ErrorMessage = "Il Costo di Spedizione è un campo obbligatorio")]
         [DisplayFormat(DataFormatString = "{0:N2}")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Il Costo deve essere maggiore di zero.")]
         [DisplayName("Costo di Spedizione")]
         public decimal CostoSpedizione { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:d}")]
         [DisplayName("Data di Consegna Prevista (AAAA-MM-GG)")]
+        [DataType(DataType.DateTime)]
         [Required(ErrorMessage = "La Data di Consegna Prevista è un campo obbligatorio")]
         public DateTime DataConsegnaPrevista { get; set; }
 

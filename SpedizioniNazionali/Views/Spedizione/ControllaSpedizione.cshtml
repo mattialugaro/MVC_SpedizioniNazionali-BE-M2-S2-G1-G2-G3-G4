@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SpedizioniNazionali.Models.AggiornamentoSpedizione>
+
+@{
+    ViewBag.Title = "ControllaSpedizione";
+}
+
+<h2>Controlla Spedizione</h2>
+
+<table class="table text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StatoSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuogoPacco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataOraAggiornamento)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatoSpedizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuogoPacco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOraAggiornamento)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -81,20 +81,6 @@
 </div>
 
 
-<script>
-
-    $("#tipoCliente").change(function () {
-        if ($(this).val() == 'Azienda') {
-            $('#piva').show();
-            $('#codicefiscale').hide();
-        } else {
-            $('#codicefiscale').show();
-            $('#piva').hide();
-        }
-    });
-
-</script>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

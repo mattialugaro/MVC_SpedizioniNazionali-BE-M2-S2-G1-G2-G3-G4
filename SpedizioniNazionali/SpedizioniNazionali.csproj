@@ -123,6 +123,7 @@
     <Compile Include="checkRuoloUtente.cs" />
     <Compile Include="checkStatoSpedizione.cs" />
     <Compile Include="checkTipoCliente.cs" />
+    <Compile Include="Controllers\AggiornamentoSpedizioneController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpedizioneController.cs" />
     <Compile Include="Controllers\UtenteController.cs" />
@@ -195,6 +196,9 @@
     <Content Include="Views\Utente\Registrazione.cshtml" />
     <Content Include="Views\Utente\Index.cshtml" />
     <Content Include="Views\Utente\Login.cshtml" />
+    <Content Include="Views\AggiornamentoSpedizione\Index.cshtml" />
+    <Content Include="Views\Spedizione\ControllaSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\CercaSpedizione.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

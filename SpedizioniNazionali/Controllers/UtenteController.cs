@@ -115,7 +115,7 @@ namespace SpedizioniNazionali.Controllers
             try
             {
                 conn.Open();
-                string query = "INSERT INTO Utente(Nome, Cognome, Email, Username, Password, Ruolo) VALUES(@Nome, @Cognome, @Email, @Userrname, @Password, Utente)";
+                string query = "INSERT INTO Utente(Nome, Cognome, Email, Username, Password, Ruolo) VALUES(@Nome, @Cognome, @Email, @Userrname, @Password, @Ruolo)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -124,7 +124,7 @@ namespace SpedizioniNazionali.Controllers
                 cmd.Parameters.AddWithValue("@Email", u.Email);
                 cmd.Parameters.AddWithValue("@Username", u.Username);
                 cmd.Parameters.AddWithValue("@Password", u.Password);
-                cmd.Parameters.AddWithValue("@Ruolo", u.Ruolo = "Utente");
+                cmd.Parameters.AddWithValue("@Ruolo", "Utente");
                 cmd.ExecuteNonQuery();
 
 
